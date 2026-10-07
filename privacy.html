@@ -10,7 +10,7 @@
   body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.7 system-ui, -apple-system, "Segoe UI", "Malgun Gothic", sans-serif; }
   main { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
   h1 { font-size: 26px; margin: 0 0 4px; } h2 { font-size: 19px; margin: 28px 0 8px; } h3 { font-size: 16px; margin: 18px 0 6px; }
-  p, li { color: var(--text); } .muted { color: var(--muted); } a { color: var(--link); }
+  p, li { color: var(--text); } .muted { color: var(--muted); } a { color: var(--link); overflow-wrap: anywhere; }
   hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
   nav { font-size: 14px; margin-bottom: 24px; }
 </style>
@@ -22,38 +22,41 @@
 <h1>Privacy Policy</h1>
 <p class="muted">Shorts Studio · Effective 7 October 2026</p>
 
-<p>Shorts Studio is a personal desktop tool. An individual creator runs it on their own computer to make short videos and to upload them, one approved video at a time, to their own YouTube channel. It is not a hosted service and has no other users.</p>
+<p>Shorts Studio is a personal desktop tool. An individual creator runs it on their own computer to make short videos and to upload them, one approved video at a time, to their own YouTube channel. It is not a hosted service and has no other users. Connecting YouTube requires agreeing to this policy first.</p>
 
-<h2>YouTube API Services</h2>
-<p>Shorts Studio uses <strong>YouTube API Services</strong> to upload videos to the channel you connect and to show the processing and privacy status of those uploads. By using these features you agree to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's handling of your data is described in the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<h2 id="youtube">YouTube API Services</h2>
+<p>Shorts Studio uses <strong>YouTube API Services</strong> to upload videos to the channel you connect and to show the processing and privacy status of those uploads. By using these features you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. How Google handles your data is described in the Google Privacy Policy at <a href="https://www.google.com/policies/privacy">https://www.google.com/policies/privacy</a>.</p>
 
-<h2>What data is accessed</h2>
+<h2 id="access">What data is accessed</h2>
+<p>Shorts Studio asks Google only for permission to upload videos (<code>youtube.upload</code>) and to view your YouTube account (<code>youtube.readonly</code>). It uses them for:</p>
 <ul>
-  <li>With your permission (Google sign-in), the identifier and name of the YouTube channel you choose, so the tool can show which channel is connected and refuse to upload to any other channel.</li>
+  <li>Uploading each video you approve, with the title, description, tags, category, language, privacy setting and AI disclosure you reviewed.</li>
+  <li>The identifier and name of the YouTube channel you connect, so the tool can show which channel is connected and refuse to upload to any other channel.</li>
   <li>The status of videos you upload with the tool (whether YouTube has processed them and their privacy setting).</li>
 </ul>
 <p>Shorts Studio does not read your other videos, comments, subscribers, analytics, e-mail or contacts.</p>
 
-<h2>What data is stored, and where</h2>
+<h2 id="storage">What data is stored, and where</h2>
 <ul>
   <li><strong>Sign-in token:</strong> stored only on your own computer (in your user profile folder). It is never sent anywhere except to Google to perform the actions you approve.</li>
   <li><strong>Upload records:</strong> for each video you upload, its YouTube video ID, title, channel name, privacy status and upload time, stored only on your own computer in the project folder.</li>
 </ul>
 
-<h2>How data is used and shared</h2>
-<p>This data is used only to upload the videos you approve and to show you their status. It is not shared with, sold to, or disclosed to anyone. Shorts Studio does not use cookies, does not track devices, has no analytics and serves no advertising, and no third party serves ads or collects information through it.</p>
+<h2 id="use">How data is used and shared</h2>
+<p>This data is used only to upload the videos you approve and to show you their status. It is not shared with, sold to, or disclosed to anyone, inside or outside Shorts Studio. Shorts Studio does not use cookies, does not store or read information on your device for tracking, has no analytics and serves no advertising, and no third party serves ads or collects information through it.</p>
 
-<h2>Retention and deletion</h2>
+<h2 id="retention">Retention and deletion</h2>
 <ul>
-  <li>Stored upload status is refreshed from YouTube when it is shown and at least every 30 days, or deleted.</li>
-  <li>When you disconnect YouTube in Shorts Studio, the sign-in token is revoked with Google immediately and deleted from your computer.</li>
+  <li>Stored upload records are refreshed from YouTube when they are shown and at least every 30 days. The record of a video that no longer exists on YouTube is deleted.</li>
+  <li>When you disconnect YouTube in Shorts Studio, the sign-in token is revoked with Google immediately and deleted from your computer. If you do not connect again within 7 days, the upload records are deleted too.</li>
+  <li>If you revoke access in your Google Account instead, Shorts Studio notices when it next checks its connection (when it starts, and once a day while it runs). It then deletes the sign-in token, and deletes the upload records within 7 days unless you connect again.</li>
   <li>You can delete the upload records at any time by deleting the files, or ask us to (see Contact); requests are completed within 7 days.</li>
 </ul>
 
-<h2>How to revoke access</h2>
-<p>Use <strong>Disconnect YouTube</strong> in Shorts Studio, or remove “Shorts Studio” from the apps with access to your account in your <a href="https://myaccount.google.com/permissions">Google Account security settings</a>. Access you revoke through Google is honoured, and any stored data related to it is deleted within 30 days.</p>
+<h2 id="revoke">How to revoke access</h2>
+<p>Besides <strong>Disconnect YouTube</strong> in Shorts Studio, you can revoke Shorts Studio's access to your data at any time on the Google security settings page at <a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>.</p>
 
-<h2>Contact</h2>
+<h2 id="contact">Contact</h2>
 <p>Questions or privacy complaints: <a href="mailto:ongsya@gmail.com">ongsya@gmail.com</a></p>
 
 <hr id="ko">
@@ -61,14 +64,16 @@
 <h1>개인정보처리방침</h1>
 <p class="muted">쇼츠 스튜디오 · 2026년 10월 7일 시행</p>
 
-<p>쇼츠 스튜디오는 개인 창작자가 자기 컴퓨터에서 실행하는 개인용 프로그램입니다. 짧은 영상을 만들고, 직접 승인한 영상을 한 편씩 자기 유튜브 채널에 올립니다. 인터넷 서비스가 아니며 다른 사용자가 없습니다.</p>
+<p>쇼츠 스튜디오는 개인 창작자가 자기 컴퓨터에서 실행하는 개인용 프로그램입니다. 짧은 영상을 만들고, 직접 승인한 영상을 한 편씩 자기 유튜브 채널에 올립니다. 인터넷 서비스가 아니며 다른 사용자가 없습니다. 유튜브를 연결하려면 먼저 이 방침에 동의해야 합니다.</p>
 
 <h2>YouTube API 서비스</h2>
-<p>쇼츠 스튜디오는 연결한 채널에 영상을 올리고 그 처리 상태와 공개 범위를 보여 주기 위해 <strong>YouTube API 서비스</strong>를 사용합니다. 이 기능을 쓰면 <a href="https://www.youtube.com/t/terms">YouTube 서비스 약관</a>에 동의하는 것입니다. Google의 정보 처리 방식은 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 참고하세요.</p>
+<p>쇼츠 스튜디오는 연결한 채널에 영상을 올리고 그 처리 상태와 공개 범위를 보여 주기 위해 <strong>YouTube API 서비스</strong>를 사용합니다. 이 기능을 쓰면 <a href="https://www.youtube.com/t/terms">YouTube 서비스 약관</a>에 동의하는 것입니다. Google의 정보 처리 방식은 Google 개인정보처리방침(<a href="https://www.google.com/policies/privacy">https://www.google.com/policies/privacy</a>)을 참고하세요.</p>
 
 <h2>접근하는 정보</h2>
+<p>쇼츠 스튜디오는 Google에 영상 업로드(<code>youtube.upload</code>)와 유튜브 계정 보기(<code>youtube.readonly</code>) 권한만 요청하며, 다음에만 씁니다.</p>
 <ul>
-  <li>Google 로그인으로 허락받은 범위에서, 선택한 유튜브 채널의 ID와 이름. 어느 채널에 연결됐는지 보여 주고, 다른 채널에는 올리지 않도록 확인하는 데 씁니다.</li>
+  <li>사용자가 확인한 제목·설명·태그·카테고리·언어·공개 범위·AI 사용 표시로, 승인한 영상을 올리는 일.</li>
+  <li>연결한 유튜브 채널의 ID와 이름. 어느 채널에 연결됐는지 보여 주고, 다른 채널에는 올리지 않도록 확인하는 데 씁니다.</li>
   <li>이 프로그램으로 올린 영상의 처리 상태와 공개 범위.</li>
 </ul>
 <p>다른 영상, 댓글, 구독자, 통계, 이메일, 연락처는 읽지 않습니다.</p>
@@ -80,17 +85,18 @@
 </ul>
 
 <h2>이용과 제공</h2>
-<p>이 정보는 승인한 영상을 올리고 그 상태를 보여 주는 데만 씁니다. 누구에게도 제공·판매·공개하지 않습니다. 쿠키, 기기 추적, 분석 도구, 광고를 쓰지 않으며 제3자가 이 프로그램을 통해 광고를 하거나 정보를 모으지 않습니다.</p>
+<p>이 정보는 승인한 영상을 올리고 그 상태를 보여 주는 데만 씁니다. 누구에게도 제공·판매·공개하지 않습니다. 쿠키를 쓰지 않고, 추적을 위해 기기에 정보를 저장하거나 읽지 않으며, 분석 도구와 광고를 쓰지 않습니다. 제3자가 이 프로그램을 통해 광고를 하거나 정보를 모으지 않습니다.</p>
 
 <h2>보관과 삭제</h2>
 <ul>
-  <li>저장된 업로드 상태는 화면에 보여 줄 때와 적어도 30일마다 YouTube에서 새로 고치거나 삭제합니다.</li>
-  <li>쇼츠 스튜디오에서 유튜브 연결을 끊으면 로그인 정보가 즉시 Google에서 취소되고 컴퓨터에서 삭제됩니다.</li>
+  <li>저장된 업로드 기록은 화면에 보여 줄 때와 적어도 30일마다 YouTube에서 새로 고칩니다. YouTube에서 사라진 영상의 기록은 지웁니다.</li>
+  <li>쇼츠 스튜디오에서 유튜브 연결을 끊으면 로그인 정보가 즉시 Google에서 취소되고 컴퓨터에서 삭제됩니다. 7일 안에 다시 연결하지 않으면 업로드 기록도 지웁니다.</li>
+  <li>Google 계정에서 권한을 취소한 경우에는, 쇼츠 스튜디오가 다음에 연결을 확인할 때(실행할 때와 실행 중 하루 한 번) 이를 알아채고 로그인 정보를 지우며, 7일 안에 다시 연결하지 않으면 업로드 기록도 지웁니다.</li>
   <li>업로드 기록은 파일을 지워서 언제든 삭제할 수 있고, 아래 연락처로 요청하면 7일 안에 삭제합니다.</li>
 </ul>
 
 <h2>접근 권한 취소</h2>
-<p>쇼츠 스튜디오의 <strong>연결 끊기</strong>를 누르거나, <a href="https://myaccount.google.com/permissions">Google 계정 보안 설정</a>에서 계정 접근 권한이 있는 앱 목록의 ‘Shorts Studio’를 삭제하세요. Google에서 취소한 접근은 존중되며, 관련해 저장된 정보는 30일 안에 삭제합니다.</p>
+<p>쇼츠 스튜디오의 <strong>연결 끊기</strong> 말고도, Google 보안 설정 페이지(<a href="https://security.google.com/settings/security/permissions">https://security.google.com/settings/security/permissions</a>)에서 언제든 쇼츠 스튜디오의 접근 권한을 취소할 수 있습니다.</p>
 
 <h2>연락처</h2>
 <p>문의 및 개인정보 관련 민원: <a href="mailto:ongsya@gmail.com">ongsya@gmail.com</a></p>
