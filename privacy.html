@@ -21,36 +21,40 @@
 <nav><a href="./">Shorts Studio</a> · <a href="terms.html">Terms of Use / 이용약관</a> · <a href="#ko">한국어</a></nav>
 
 <h1>Privacy Policy</h1>
-<p class="muted">Shorts Studio · Effective 21 October 2026</p>
+<p class="muted">Shorts Studio · Effective 28 October 2026</p>
 
 <p>Shorts Studio is a personal desktop tool. An individual creator runs it on their own computer to make short videos and to upload them, one approved video at a time, to their own YouTube channel. It is not a hosted service and has no other users. Connecting YouTube requires agreeing to this policy first.</p>
 
 <h2 id="youtube">YouTube API Services</h2>
-<p>Shorts Studio uses <strong>YouTube API Services</strong> to upload videos to the channel you connect, to show the processing and privacy status of those uploads and to put them in the channel's playlists. By using these features you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. How Google handles your data is described in the Google Privacy Policy at <a href="https://www.google.com/policies/privacy">https://www.google.com/policies/privacy</a>.</p>
+<p>Shorts Studio uses <strong>YouTube API Services</strong> to upload videos to the channel you connect, to show the processing and privacy status of those uploads and how they are doing, and to put them in the channel's playlists. By using these features you agree to be bound by the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. How Google handles your data is described in the Google Privacy Policy at <a href="https://www.google.com/policies/privacy">https://www.google.com/policies/privacy</a>.</p>
 
 <h2 id="access">What data is accessed</h2>
-<p>Shorts Studio asks Google only for permission to upload videos (<code>youtube.upload</code>), to view your YouTube account (<code>youtube.readonly</code>) and to manage your YouTube content (<code>youtube.force-ssl</code>), the narrowest permission YouTube offers for adding a video to a playlist, and to create files in your Google Drive (<code>drive.file</code>, which lets it see only the files it created itself). It uses them for:</p>
+<p>Shorts Studio asks Google only for permission to upload videos (<code>youtube.upload</code>), to view your YouTube account (<code>youtube.readonly</code>) to manage your YouTube content (<code>youtube.force-ssl</code>), the narrowest permission YouTube offers for adding a video to a playlist, to view YouTube Analytics reports for your channel (<code>yt-analytics.readonly</code>), and to create files in your Google Drive (<code>drive.file</code>, which lets it see only the files it created itself). It uses them for:</p>
 <ul>
   <li>Uploading each video you approve, with the title, description, tags, category, language, privacy setting and AI disclosure you reviewed.</li>
   <li>The identifier and name of the YouTube channel you connect, so the tool can show which channel is connected and refuse to upload to any other channel.</li>
-  <li>The status of videos you upload with the tool (whether YouTube has processed them and their privacy setting).</li>
+  <li>The status of videos you upload with the tool (whether YouTube has processed them and their privacy setting) and their public view, like and comment counts.</li>
+  <li>YouTube Analytics numbers, read-only: for the videos you upload with the tool, their views, engaged views, average view duration and percentage viewed, and subscribers gained; for the channel as a whole, views and subscribers gained per day. Nothing else is read from YouTube Analytics.</li>
   <li>Putting each video you upload with the tool into the playlist on your channel named after its series, and creating that playlist (public) if your channel has none by that name. For this it reads your playlists' titles and which videos they hold. It never removes anything from a playlist, and it does not use this permission to edit or delete videos, comments, captions or anything else.</li>
-  <li>Backing up the files of each video you make (the video, its thumbnail, images, narration and script texts) to a folder it creates in your own Google Drive. It cannot see any other file in your Drive. Upload records are never sent there.</li>
+  <li>Backing up the files of each video you make (the video, its thumbnail, images, narration and script texts) to a folder it creates in your own Google Drive. It cannot see any other file in your Drive. Upload records are not part of the backup.</li>
+  <li>When you ask for it, a statistics sheet: one Google Sheet it creates in your own Google Drive with the upload records of the videos uploaded with the tool, the numbers above and a calendar of their release times. Each refresh replaces its contents. It is shared with no one unless you share it yourself.</li>
 </ul>
-<p>Apart from your playlists and its own backup folder, Shorts Studio does not read your other videos, files, comments, subscribers, analytics, e-mail or contacts.</p>
+<p>Apart from your playlists, the numbers above and the files it created in your Drive, Shorts Studio does not read your other videos, files, comments, the list of your subscribers, other analytics, e-mail or contacts.</p>
 
 <h2 id="storage">What data is stored, and where</h2>
 <ul>
   <li><strong>Sign-in token:</strong> stored only on your own computer (in your user profile folder). It is never sent anywhere except to Google to perform the actions you approve.</li>
-  <li><strong>Upload records:</strong> for each video you upload, its YouTube video ID, title, channel name, privacy status and upload time, stored only on your own computer in the project folder.</li>
+  <li><strong>Upload records:</strong> for each video you upload, its YouTube video ID, title, channel name, privacy status and upload time, stored on your own computer in the project folder, and in the statistics sheet if you use it.</li>
+  <li><strong>Statistics:</strong> the counts and Analytics numbers above, kept only in the statistics sheet: on your own computer (<code>output/stats.xlsx</code> in the project folder, and <code>output/stats.csv</code> if you export one) and in the Google Sheet it created in your Drive.</li>
 </ul>
 
 <h2 id="use">How data is used and shared</h2>
-<p>This data is used only to upload the videos you approve, to show you their status and to put them in their playlists. It is not shared with, sold to, or disclosed to anyone, inside or outside Shorts Studio. Shorts Studio does not use cookies, does not store or read information on your device for tracking, has no analytics and serves no advertising, and no third party serves ads or collects information through it.</p>
+<p>This data is used only to upload the videos you approve, to show you their status and how they are doing, and to put them in their playlists. It is not shared with, sold to, or disclosed to anyone, inside or outside Shorts Studio. Shorts Studio does not use cookies, does not store or read information on your device for tracking, has no analytics and serves no advertising, and no third party serves ads or collects information through it.</p>
 
 <h2 id="retention">Retention and deletion</h2>
 <ul>
   <li>Stored upload records are refreshed from YouTube when they are shown and at least every 30 days. The record of a video that no longer exists on YouTube is deleted.</li>
+  <li>The statistics sheet is refreshed from YouTube each time it is updated (once a day while it is in use). It is deleted, in your Drive and on your computer, together with the upload records, and you can delete it yourself at any time.</li>
   <li>When you disconnect YouTube in Shorts Studio, the sign-in token is revoked with Google immediately and deleted from your computer. If you do not connect again within 7 days, the upload records are deleted too.</li>
   <li>If you revoke access in your Google Account instead, Shorts Studio notices when it next checks its connection (when it starts, and once a day while it runs). It then deletes the sign-in token, and deletes the upload records within 7 days unless you connect again.</li>
   <li>You can delete the upload records at any time by deleting the files, or ask us to (see Contact); requests are completed within 7 days.</li>
@@ -65,36 +69,40 @@
 <hr id="ko">
 
 <h1>개인정보처리방침</h1>
-<p class="muted">쇼츠 스튜디오 · 2026년 10월 21일 시행</p>
+<p class="muted">쇼츠 스튜디오 · 2026년 10월 28일 시행</p>
 
 <p>쇼츠 스튜디오는 개인 창작자가 자기 컴퓨터에서 실행하는 개인용 프로그램입니다. 짧은 영상을 만들고, 직접 승인한 영상을 한 편씩 자기 유튜브 채널에 올립니다. 인터넷 서비스가 아니며 다른 사용자가 없습니다. 유튜브를 연결하려면 먼저 이 방침에 동의해야 합니다.</p>
 
 <h2>YouTube API 서비스</h2>
-<p>쇼츠 스튜디오는 연결한 채널에 영상을 올리고, 그 처리 상태와 공개 범위를 보여 주고, 채널 재생목록에 넣기 위해 <strong>YouTube API 서비스</strong>를 사용합니다. 이 기능을 쓰면 <a href="https://www.youtube.com/t/terms">YouTube 서비스 약관</a>에 동의하는 것입니다. Google의 정보 처리 방식은 Google 개인정보처리방침(<a href="https://www.google.com/policies/privacy">https://www.google.com/policies/privacy</a>)을 참고하세요.</p>
+<p>쇼츠 스튜디오는 연결한 채널에 영상을 올리고, 그 처리 상태·공개 범위와 반응을 보여 주고, 채널 재생목록에 넣기 위해 <strong>YouTube API 서비스</strong>를 사용합니다. 이 기능을 쓰면 <a href="https://www.youtube.com/t/terms">YouTube 서비스 약관</a>에 동의하는 것입니다. Google의 정보 처리 방식은 Google 개인정보처리방침(<a href="https://www.google.com/policies/privacy">https://www.google.com/policies/privacy</a>)을 참고하세요.</p>
 
 <h2>접근하는 정보</h2>
-<p>쇼츠 스튜디오는 Google에 영상 업로드(<code>youtube.upload</code>), 유튜브 계정 보기(<code>youtube.readonly</code>), 유튜브 콘텐츠 관리(<code>youtube.force-ssl</code>, 영상을 재생목록에 넣을 수 있는 가장 좁은 권한), 구글 드라이브 파일 만들기(<code>drive.file</code>, 이 프로그램이 만든 파일만 볼 수 있음) 권한만 요청하며, 다음에만 씁니다.</p>
+<p>쇼츠 스튜디오는 Google에 영상 업로드(<code>youtube.upload</code>), 유튜브 계정 보기(<code>youtube.readonly</code>), 유튜브 콘텐츠 관리(<code>youtube.force-ssl</code>, 영상을 재생목록에 넣을 수 있는 가장 좁은 권한), 유튜브 채널 분석 보고서 보기(<code>yt-analytics.readonly</code>), 구글 드라이브 파일 만들기(<code>drive.file</code>, 이 프로그램이 만든 파일만 볼 수 있음) 권한만 요청하며, 다음에만 씁니다.</p>
 <ul>
   <li>사용자가 확인한 제목·설명·태그·카테고리·언어·공개 범위·AI 사용 표시로, 승인한 영상을 올리는 일.</li>
   <li>연결한 유튜브 채널의 ID와 이름. 어느 채널에 연결됐는지 보여 주고, 다른 채널에는 올리지 않도록 확인하는 데 씁니다.</li>
-  <li>이 프로그램으로 올린 영상의 처리 상태와 공개 범위.</li>
+  <li>이 프로그램으로 올린 영상의 처리 상태와 공개 범위, 그리고 공개된 조회수·좋아요 수·댓글 수.</li>
+  <li>YouTube 분석(Analytics) 수치, 읽기만: 이 프로그램으로 올린 영상의 조회수, 참여 조회수, 평균 시청 시간과 시청 비율, 늘어난 구독자 수, 그리고 채널 전체의 날짜별 조회수와 늘어난 구독자 수. 분석에서 그 밖의 것은 읽지 않습니다.</li>
   <li>이 프로그램으로 올린 영상을 채널에서 그 시리즈 이름의 재생목록에 넣는 일. 그 이름의 재생목록이 없으면 공개로 만듭니다. 이를 위해 재생목록의 제목과 담긴 영상을 읽습니다. 재생목록에서 빼는 일은 하지 않으며, 이 권한으로 영상·댓글·자막 등을 고치거나 지우지 않습니다.</li>
-  <li>만든 영상의 파일(영상, 썸네일, 그림, 녹음, 대본 글)을 본인 구글 드라이브에 이 프로그램이 만든 폴더로 백업하는 일. 드라이브의 다른 파일은 볼 수 없으며, 업로드 기록은 올리지 않습니다.</li>
+  <li>만든 영상의 파일(영상, 썸네일, 그림, 녹음, 대본 글)을 본인 구글 드라이브에 이 프로그램이 만든 폴더로 백업하는 일. 드라이브의 다른 파일은 볼 수 없으며, 업로드 기록은 백업에 넣지 않습니다.</li>
+  <li>사용자가 원할 때, 현황 시트: 이 프로그램으로 올린 영상의 업로드 기록, 위의 수치, 공개 시각 달력을 본인 구글 드라이브에 이 프로그램이 만든 구글 시트 하나에 담습니다. 새로 고칠 때마다 내용을 바꿔 씁니다. 사용자가 직접 공유하지 않으면 누구와도 공유되지 않습니다.</li>
 </ul>
-<p>재생목록과 자기 백업 폴더 말고는 다른 영상, 파일, 댓글, 구독자, 통계, 이메일, 연락처를 읽지 않습니다.</p>
+<p>재생목록, 위의 수치, 드라이브에 자기가 만든 파일 말고는 다른 영상, 파일, 댓글, 구독자 명단, 그 밖의 분석 정보, 이메일, 연락처를 읽지 않습니다.</p>
 
 <h2>저장하는 정보와 위치</h2>
 <ul>
   <li><strong>로그인 정보(토큰):</strong> 사용자 본인 컴퓨터의 사용자 폴더에만 저장합니다. 승인한 작업을 위해 Google에 보내는 것 말고는 어디에도 보내지 않습니다.</li>
-  <li><strong>업로드 기록:</strong> 올린 영상마다 영상 ID, 제목, 채널 이름, 공개 범위, 올린 시각을 본인 컴퓨터의 프로젝트 폴더에만 저장합니다.</li>
+  <li><strong>업로드 기록:</strong> 올린 영상마다 영상 ID, 제목, 채널 이름, 공개 범위, 올린 시각을 본인 컴퓨터의 프로젝트 폴더에 저장하고, 현황 시트를 쓰면 그 시트에도 담습니다.</li>
+  <li><strong>수치:</strong> 위의 조회수와 분석 수치는 현황 시트에만 남깁니다. 본인 컴퓨터(프로젝트 폴더의 <code>output/stats.xlsx</code>, 따로 내보낸 경우 <code>output/stats.csv</code>)와 본인 드라이브에 이 프로그램이 만든 구글 시트입니다.</li>
 </ul>
 
 <h2>이용과 제공</h2>
-<p>이 정보는 승인한 영상을 올리고, 그 상태를 보여 주고, 재생목록에 넣는 데만 씁니다. 누구에게도 제공·판매·공개하지 않습니다. 쿠키를 쓰지 않고, 추적을 위해 기기에 정보를 저장하거나 읽지 않으며, 분석 도구와 광고를 쓰지 않습니다. 제3자가 이 프로그램을 통해 광고를 하거나 정보를 모으지 않습니다.</p>
+<p>이 정보는 승인한 영상을 올리고, 그 상태와 반응을 보여 주고, 재생목록에 넣는 데만 씁니다. 누구에게도 제공·판매·공개하지 않습니다. 쿠키를 쓰지 않고, 추적을 위해 기기에 정보를 저장하거나 읽지 않으며, 분석 도구와 광고를 쓰지 않습니다. 제3자가 이 프로그램을 통해 광고를 하거나 정보를 모으지 않습니다.</p>
 
 <h2>보관과 삭제</h2>
 <ul>
   <li>저장된 업로드 기록은 화면에 보여 줄 때와 적어도 30일마다 YouTube에서 새로 고칩니다. YouTube에서 사라진 영상의 기록은 지웁니다.</li>
+  <li>현황 시트는 새로 고칠 때마다(쓰는 동안 하루 한 번) YouTube에서 다시 받습니다. 업로드 기록을 지울 때 드라이브와 컴퓨터의 현황 시트도 함께 지우며, 사용자가 언제든 직접 지울 수도 있습니다.</li>
   <li>쇼츠 스튜디오에서 유튜브 연결을 끊으면 로그인 정보가 즉시 Google에서 취소되고 컴퓨터에서 삭제됩니다. 7일 안에 다시 연결하지 않으면 업로드 기록도 지웁니다.</li>
   <li>Google 계정에서 권한을 취소한 경우에는, 쇼츠 스튜디오가 다음에 연결을 확인할 때(실행할 때와 실행 중 하루 한 번) 이를 알아채고 로그인 정보를 지우며, 7일 안에 다시 연결하지 않으면 업로드 기록도 지웁니다.</li>
   <li>업로드 기록은 파일을 지워서 언제든 삭제할 수 있고, 아래 연락처로 요청하면 7일 안에 삭제합니다.</li>
